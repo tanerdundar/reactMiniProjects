@@ -12,8 +12,8 @@ const courseMap = {
 };
 
 function Course({ courseName }) {
-  // console.log(Angular);
-  // console.log(courseName);
+  console.log(Angular);
+  console.log(courseName);
 
   return (
     <div className="courseDiv">

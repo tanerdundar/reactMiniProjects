@@ -2,10 +2,10 @@ import Course from "./Course";
 import "./App.css";
 import { useState } from "react";
 
-function getRandomCourse() {
-  const courseArray = ["Angular", "Bootstrap", "Ccsharp", "FullWeb"];
-  return courseArray[Math.floor(Math.random() * courseArray.length)];
-}
+// function getRandomCourse() {
+//   const courseArray = ["Angular", "Bootstrap", "Ccsharp", "FullWeb"];
+//   return courseArray[Math.floor(Math.random() * courseArray.length)];
+// }
 
 function App() {
   const [courses, setCourses] = useState([]);
