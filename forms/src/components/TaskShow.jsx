@@ -1,11 +1,14 @@
 import { useState } from "react";
 import TaskCreate from "./TaskCreate";
+import { useContext } from "react";
+import TasksContext from "../context/tasks";
 
 function TaskShow(props) {
+  const { deleteTaskById, updateTaskById } = useContext(TasksContext);
   const [showEdit, setShowEdit] = useState(false);
 
   const handleDelete = () => {
-    props.onDelete(props.task.id);
+    deleteTaskById(props.task.id);
   };
 
   const handleUpdate = () => {
@@ -14,7 +17,7 @@ function TaskShow(props) {
   const handleSubmit = (id, updatedTitle, updatedDescription) => {
     setShowEdit(false);
     //  setShowEdit(!showEdit);
-    props.onUpdate(id, updatedTitle, updatedDescription);
+    updateTaskById(id, updatedTitle, updatedDescription);
   };
 
   return (

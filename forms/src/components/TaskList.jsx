@@ -1,18 +1,15 @@
 import TaskShow from "./TaskShow";
+import { useContext } from "react";
+import TasksContext from "../context/tasks";
 
-function TaskList(props) {
+function TaskList() {
+  const { tasks } = useContext(TasksContext);
+
   return (
     <div className="tasks-list">
-      {props.tasks.map((task, index) => {
+      {tasks.map((task, index) => {
         //  ==>> bir array geldiği için key olarak direkt arraydeki indexi kullanabiliriz
-        return (
-          <TaskShow
-            key={index}
-            task={task}
-            onDelete={props.onDelete}
-            onUpdate={props.onUpdate}
-          />
-        );
+        return <TaskShow key={index} task={task} />;
       })}
     </div>
   );
